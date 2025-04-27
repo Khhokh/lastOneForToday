@@ -20,7 +20,8 @@ const login =async (email, password) => {
         },1500);
     }
     }catch(err){
-        showAlert('error',err.response.data.message);
+         const message = err.response ? err.response.data.message : 'An unexpected error occurred.';
+        showAlert('error', message);
     }
 
 };
