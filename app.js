@@ -17,6 +17,17 @@ const app = express();
 app.set('view engine','pug');
 app.set('views',path.join(__dirname,'views'))
 
+// Add CORS headers to all responses
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://lastonefortoday.onrender.com'); // Allow requests from your frontend
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Allowed HTTP methods
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Allowed headers
+  next();
+});
+
+
+
+
 
 
 
